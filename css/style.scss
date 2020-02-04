@@ -10,6 +10,7 @@
         justify-content: center;
         align-content: center;
     }
+
     #outerDiv{
         height: 300px;
 		display: grid;
@@ -60,18 +61,25 @@
     }
     .resetRow{
         display: grid;
-        border: 1px solid rgb(22, 97, 18);
         border-radius: $borderRadius;
         box-shadow: $boxShadow;
         grid-gap: 10px;
+        justify-items: center;
+        align-items: center;
+        
+        button{
+            width: 200px;
+            height: 30px;
+            border-radius: $borderRadius;
+            box-shadow: $boxShadow;
+            cursor: pointer;
+        }
     }
     .resultRow{
         display: grid;
-        border: 1px solid rgb(22, 97, 18);
         border-radius: $borderRadius;
         box-shadow: $boxShadow;
         grid-template-columns: 1fr 1fr;
-
         justify-content: center;
         align-content: center;
     }
@@ -82,6 +90,7 @@
     }
     .capturingHeader, .bubblingHeader{
         background-color: rgb(12, 84, 106);
+        border-radius: $borderRadius;
         color: #fff;
         align-items: center;
         margin-bottom: 5px;
@@ -92,6 +101,27 @@
         grid-auto-rows: 30px;
         grid-gap: 5px;
     }
+
+
+.phaseItem{
+    animation: animateElement linear .3s;
+    animation-iteration-count: 1;
+    width:100%;
+    min-height:30px;
+    border-radius:10px;
+   }
+  
+  @keyframes animateElement{
+    0% {
+      opacity:0;
+      transform:  translate(0px,10px);
+    }
+    100% {
+      opacity:1;
+      transform:  translate(0px,0px);
+    }
+  }
+
 	
 .textWithImageBG{
     font                    : bolder 12vw 'Times';
@@ -111,15 +141,15 @@
     background-image                    : url(../images/gallery/col3Gallery/c3Pic5.jpeg);
     -webkit-text-fill-color             : transparent;
     -webkit-background-clip             : text;
-    background-clip             : text;
+    background-clip                     : text;
     -webkit-animation-name              : animateTextMask;
-    animation-name              : animateTextMask;
+    animation-name                      : animateTextMask;
     -webkit-animation-duration          : 80s;
-    animation-duration          : 80s;
+    animation-duration                  : 80s;
     -webkit-animation-timing-function   : linear;
-    animation-timing-function   : linear;
+    animation-timing-function           : linear;
     -webkit-animation-iteration-count   : infinite;
-    animation-iteration-count   : infinite;
+    animation-iteration-count           : infinite;
     opacity                             : .2;
 }
 @keyframes animateTextMask {
