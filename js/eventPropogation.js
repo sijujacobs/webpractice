@@ -53,7 +53,7 @@ $(document).ready(function(){
     function setBubblingSection(){
         $('div.bubblingSection').empty();
         bubblePhases.forEach((cp, i) => {
-            $('div.bubblingSection').append('<div>' + (bubblePhases.length - i) + " : " +cp + '</div>');
+            $('div.bubblingSection').append('<div>' + (i + 1) + " : " +cp + '</div>');
         });
     }
 //----------- STOP PROPOGATION ----------------------------------
@@ -71,7 +71,7 @@ $(document).ready(function(){
             capturePhases.push(event.currentTarget.className);
             setCapturingSection();
         } 
-        
+
         function stopImmePropogationBubblingHandler(event) {
             event.stopImmediatePropagation();
             bubblePhases.push(event.currentTarget.className);
