@@ -1,3 +1,98 @@
+    $boxShadow : 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+    $borderRadius : 5px;
+    
+    #mainContainer{
+        display: grid;
+    }
+    #eventTopicContainer{
+        display: grid;
+        grid-template-columns: 80%;
+        justify-content: center;
+        align-content: center;
+    }
+    #outerDiv{
+        height: 300px;
+		display: grid;
+        border: 1px solid rgb(213, 49, 46);
+        border-radius: $borderRadius;
+        background-color: #da6d4c;
+        box-shadow: $boxShadow;
+        grid-template-columns: 60%;
+        grid-template-rows: 200px;
+        justify-content: center;
+        align-content: center;
+	}
+	#innerDiv{
+		display: grid;
+        border: 1px solid rgb(22, 97, 18);
+        border-radius: $borderRadius;
+        background-color: #25a93f;
+        box-shadow: $boxShadow;
+        grid-template-columns: 50%;
+        grid-template-rows: 150px;
+        justify-content: center;
+        align-content: center;
+	}
+    
+    #actionDiv{
+        display: grid;
+        border: 1px solid rgb(12, 67, 101);
+        border-radius: $borderRadius;
+        background-color: #186a88;
+        box-shadow: $boxShadow;
+        justify-items: center;
+        align-items: center;
+        button{
+            width: 15em;
+            height: 25px;
+            margin-top: 1em;
+            border: 1px solid #333;
+            border-radius: $borderRadius;
+            box-shadow: $boxShadow;
+            cursor: pointer;
+        }
+    }
+    #resultDiv{
+        display: grid;
+        border-radius: $borderRadius;
+        box-shadow: $boxShadow;
+        grid-template-rows: 50px 1fr;
+    }
+    .resetRow{
+        display: grid;
+        border: 1px solid rgb(22, 97, 18);
+        border-radius: $borderRadius;
+        box-shadow: $boxShadow;
+        grid-gap: 10px;
+    }
+    .resultRow{
+        display: grid;
+        border: 1px solid rgb(22, 97, 18);
+        border-radius: $borderRadius;
+        box-shadow: $boxShadow;
+        grid-template-columns: 1fr 1fr;
+
+        justify-content: center;
+        align-content: center;
+    }
+
+    .checkBoxWrapper{
+        color: #fff;
+        padding: 5px;
+    }
+    .capturingHeader, .bubblingHeader{
+        background-color: rgb(12, 84, 106);
+        color: #fff;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .capturingHeader, .bubblingHeader, .capturingSection, .bubblingSection{
+        display: grid;
+        justify-content: center;
+        grid-auto-rows: 30px;
+        grid-gap: 5px;
+    }
+	
 .textWithImageBG{
     font                    : bolder 12vw 'Times';
     width                   : 75vw;

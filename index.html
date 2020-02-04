@@ -5,25 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Javascript</title>
-    <script src="js/protoInheritance.js"></script>
+    <title>Javascript-CSS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- <script src="js/protoInheritance.js"></script> -->
 
 </head>
 
 <body>
-    <button id="button1">One</button>
-    <button id="button2">two</button>
-    <button id="button3">threer</button>
+    <div id="mainContainer">
+        <!-- <button id="button1">One</button>
+        <button id="button2">two</button>
+        <button id="button3">threer</button> -->
+        <div id="eventTopicContainer">
+            <h3>This Section demonstrates Event propogation.</h3>
+            <div id="outerDiv" class="orangeBox">
+                <div id="innerDiv" class="greenBox">
+                    <div id="actionDiv" class="blueBox">
+                        <button id="btnClick" class="clickButton">Click</button>
+                        <button id="btnStopProp"  class="stopPropButton">Stop Propogation</button>
+                        <button id="btnStopImmedProp" class="stopImmePropButton">Stop Immediate Propogation</button>
+                        <div class="checkBoxWrapper"><input type="checkbox" id="preDefaultCheckBox" class="prevDefaultCheckbox">Prevent Default</div>
+                        <!-- <p>Toggling a checkbox is the default action of clicking on a checkbox. 
+                            The preventDefault() method prevents this from happening.
+                            The preventDefault() method does not prevent further 
+                            propagation of an event through the DOM. </p> -->
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div id="resultDiv">
+                <div class="resetRow">
+                    <button id="btnReset" class="resetButton">Reset</button>
+                </div>
+                <div class="resultRow">
+                    <div class="capturingHeader">Capturing Phase Order</div> 
+                    <div class="bubblingHeader">Bubbling Phase Order</div> 
+                    <div class="capturingSection"></div> 
+                    <div class="bubblingSection"></div> 
+                </div>
+                
+            </div>
+        </div>
+    </div>
 </body>
 <script>
 
-    var names = ['button1', 'button2', 'button3'];
-    for (var i = 0; i < names.length; i++) {
-            (function(i){
-                document.getElementById(names[i]).addEventListener("click", function () {
-                    console.log("Value of i : " + names[i]);
-                });
-            })(i);
-    }
+    // var names = ['button1', 'button2', 'button3'];
+    // for (var i = 0; i < names.length; i++) {
+    //     (function (i) {
+    //         document.getElementById(names[i]).addEventListener("click", function () {
+    //             console.log("Value of i : " + names[i]);
+    //         });
+    //     })(i);
+    // }
 </script>
+<script src="js/eventPropogation.js"></script>
+
 </html>

@@ -1,0 +1,190 @@
+#mainContainer {
+  display: -ms-grid;
+  display: grid;
+}
+
+#eventTopicContainer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80%;
+      grid-template-columns: 80%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#outerDiv {
+  height: 300px;
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #d5312e;
+  border-radius: 5px;
+  background-color: #da6d4c;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  -ms-grid-columns: 60%;
+      grid-template-columns: 60%;
+  -ms-grid-rows: 200px;
+      grid-template-rows: 200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#innerDiv {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #166112;
+  border-radius: 5px;
+  background-color: #25a93f;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  -ms-grid-columns: 50%;
+      grid-template-columns: 50%;
+  -ms-grid-rows: 150px;
+      grid-template-rows: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+#actionDiv {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #0c4365;
+  border-radius: 5px;
+  background-color: #186a88;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#actionDiv button {
+  width: 15em;
+  height: 25px;
+  margin-top: 1em;
+  border: 1px solid #333;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  cursor: pointer;
+}
+
+#resultDiv {
+  display: -ms-grid;
+  display: grid;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  -ms-grid-rows: 50px 1fr;
+      grid-template-rows: 50px 1fr;
+}
+
+.resetRow {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #166112;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  grid-gap: 10px;
+}
+
+.resultRow {
+  display: -ms-grid;
+  display: grid;
+  border: 1px solid #166112;
+  border-radius: 5px;
+  -webkit-box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+.checkBoxWrapper {
+  color: #fff;
+  padding: 5px;
+}
+
+.capturingHeader, .bubblingHeader {
+  background-color: #0c546a;
+  color: #fff;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+.capturingHeader, .bubblingHeader, .capturingSection, .bubblingSection {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-auto-rows: 30px;
+  grid-gap: 5px;
+}
+
+.textWithImageBG {
+  font: bolder 12vw 'Times';
+  width: 75vw;
+  margin: auto;
+  text-align: center;
+  background: url("../images/code.jpg") center;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 5px 10px 25px #0e0e0e;
+}
+
+.maskedTitle {
+  text-align: center;
+  font-size: 15vw;
+  background-image: url(../images/gallery/col3Gallery/c3Pic5.jpeg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: animateTextMask;
+  animation-name: animateTextMask;
+  -webkit-animation-duration: 80s;
+  animation-duration: 80s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: .2;
+}
+
+@-webkit-keyframes animateTextMask {
+  0% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+
+@keyframes animateTextMask {
+  0% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+/*# sourceMappingURL=style.css.map */
