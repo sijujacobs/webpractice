@@ -1,0 +1,37 @@
+.textWithImageBG{
+    font                    : bolder 12vw 'Times';
+    width                   : 75vw;
+    margin                  : auto;
+    text-align              : center;
+    background              : url("../images/code.jpg") center;
+    background-size         : contain;
+    background-clip         : text;
+    -webkit-background-clip : text;
+    color                   : transparent;
+    text-shadow             : 5px 10px 25px #0e0e0e;
+}
+.maskedTitle {
+    text-align                          : center;
+    font-size                           : 15vw;
+    background-image                    : url(../images/gallery/col3Gallery/c3Pic5.jpeg);
+    -webkit-text-fill-color             : transparent;
+    -webkit-background-clip             : text;
+    background-clip             : text;
+    -webkit-animation-name              : animateTextMask;
+    animation-name              : animateTextMask;
+    -webkit-animation-duration          : 80s;
+    animation-duration          : 80s;
+    -webkit-animation-timing-function   : linear;
+    animation-timing-function   : linear;
+    -webkit-animation-iteration-count   : infinite;
+    animation-iteration-count   : infinite;
+    opacity                             : .2;
+}
+@keyframes animateTextMask {
+    0% {
+        background-position: left bottom;
+    }
+    100% {
+        background-position: right bottom;
+    }
+}

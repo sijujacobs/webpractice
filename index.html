@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Javascript</title>
+    <script src="js/protoInheritance.js"></script>
+
+</head>
+
+<body>
+    <button id="button1">One</button>
+    <button id="button2">two</button>
+    <button id="button3">threer</button>
+</body>
+<script>
+
+    var names = ['button1', 'button2', 'button3'];
+    for (var i = 0; i < names.length; i++) {
+            (function(i){
+                document.getElementById(names[i]).addEventListener("click", function () {
+                    console.log("Value of i : " + names[i]);
+                });
+            })(i);
+    }
+</script>
+</html>
