@@ -33,7 +33,8 @@ $(document).ready(function(){
     btnStopImmedProp.addEventListener("click", stopImmePropogationBubblingHandler);
     btnStopImmedProp.addEventListener("click", stopImmePropogationOtherHandler);
 
-    preDefaultCheckBox.addEventListener("click", prevDefaultHandler);
+    preDefaultCheckBox.addEventListener("click", prevDefaultCapturingHandler, true);
+    preDefaultCheckBox.addEventListener("click", prevDefaultBubblingHandler);
 
     function capturingPhaseClickHandler(event) {
         capturePhases.push(event.currentTarget.className);
@@ -89,8 +90,14 @@ $(document).ready(function(){
             setBubblingSection();
         } 
 
-        function prevDefaultHandler(event) {
+        function prevDefaultCapturingHandler(event) {
+            capturePhases.push(event.currentTarget.className);
+            setCapturingSection();
+        } 
+        function prevDefaultBubblingHandler(event) {
             event.preventDefault();
+            bubblePhases.push(event.currentTarget.className);
+            setBubblingSection();
         } 
         function resetHandler(event) {
             console.log("resetHandler");
