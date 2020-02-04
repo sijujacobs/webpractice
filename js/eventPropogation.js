@@ -91,7 +91,6 @@ $(document).ready(function(){
 
         function prevDefaultHandler(event) {
             event.preventDefault();
-            // console.log("prevDefaultHandler");
         } 
         function resetHandler(event) {
             console.log("resetHandler");
