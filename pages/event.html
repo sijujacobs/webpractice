@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Javascript-CSS</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body>
+    <div id="mainContainer">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+      </ul>
+      <h3>Event</h3>
+      <div id="eventTopicContainer">
+        <h3>This Section demonstrates Event propogation.</h3>
+        <div id="outerDiv" class="orangeBox">
+          <div id="innerDiv" class="greenBox">
+            <div id="actionDiv" class="blueBox">
+              <button id="btnClick" class="clickButton">Click</button>
+              <button id="btnStopProp" class="stopPropButton">
+                Stop Propogation
+              </button>
+              <button id="btnStopImmedProp" class="stopImmePropButton">
+                Stop Immediate Propogation
+              </button>
+              <div class="checkBoxWrapper">
+                <input
+                  type="checkbox"
+                  id="preDefaultCheckBox"
+                  class="prevDefaultCheckBox"
+                />Prevent Default
+              </div>
+              <!-- <p>Toggling a checkbox is the default action of clicking on a checkbox. 
+                            The preventDefault() method prevents this from happening.
+                            The preventDefault() method does not prevent further 
+                            propagation of an event through the DOM. </p> -->
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div id="resultDiv">
+          <div class="resetRow">
+            <button id="btnReset" class="resetButton">Reset</button>
+          </div>
+          <div class="resultRow">
+            <div class="capturingHeader">Capturing Phase Order</div>
+            <div class="bubblingHeader">Bubbling Phase Order</div>
+            <div class="capturingSection"></div>
+            <div class="bubblingSection"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/eventPropogation.js"></script>
+  </body>
+</html>
