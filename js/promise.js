@@ -1,5 +1,14 @@
 (function() {
   function PromiseTopic() {
+    this.getAlbumsXmlHTTP = () => {
+      const xHttpRequest = new XMLHttpRequest();
+      xHttpRequest.open("GET", "https://jsonplaceholder.typicode.com/albums");
+      xHttpRequest.send();
+      xHttpRequest.onload = function() {
+        let parsedHttpResponse = JSON.parse(xHttpRequest.response);
+        console.log("Http :: parsedHttpResponse : ", parsedHttpResponse);
+      };
+    };
     this.getUsers = () => {
       return new Promise((resolve, reject) => {
         var ajaxRrequest = $.ajax({
@@ -50,6 +59,8 @@
   promises.then(function(results) {
     console.log(results);
   });
+
+  pTopic.getAlbumsXmlHTTP();
 })();
 // var request = $.ajax({
 //     url: "baseURL",
