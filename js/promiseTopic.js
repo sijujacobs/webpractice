@@ -1,42 +1,47 @@
+//------- Promise Example 1
 
-var products = [
-    {id:1, name : "product1", brand:"brand1"},
-    {id:2, name : "product2", brand:"brand2"},
-    {id:3, name : "product3", brand:"brand3"}
-];
+// Promise Example 3
 
-function getProducts(){
-    console.log(' PromiseTopic :: getProducts : products - ', products);
-}
+const loadImage = url => {
+  return new Promise(function(resolve, reject) {
+    //Open a new XHR
+    var request = new XMLHttpRequest();
+    request.open("GET", url);
+    // When the request loads, check whether it was successful
+    request.onload = function() {
+      if (request.status === 200) {
+        // If successful, resolve the promise
+        resolve(request.response);
+      } else {
+        // Otherwise, reject the promise
+        reject(
+          Error(
+            "An error occurred while loading image. error code:" +
+              request.statusText
+          )
+        );
+      }
+    };
 
-var newProduct = {id:4, name : "product4", brand:"brand4"};
-addProduct(newProduct)
-.then((result) => console.log("Addproduct: result : ", result) )
-.catch( (error) => console.log("Addproduct: error : ", error) )
+    request.send();
+  });
+};
 
-function addProduct(nProduct){
-    return new Promise( (resolve, reject ) => {
-        setTimeout(() => {
-            products.push(nProduct);
-            var hasError = false;
-            if(!hasError){
-                let resultObject = {
-                    data : nProduct,
-                    message : "SUCCESS"
-                }
-                resolve(resultObject);
-            }else{
-                let errorObject = {
-                    data : nProduct,
-                    message : "ERROR"
-                }
-                reject(errorObject)
-            }
-        }, 3000);
-    });
-}
+const embedImage = url => {
+  loadImage(url).then(
+    function(result) {
+      const img = new Image();
+      var imageURL = window.URL.createObjectURL(result);
+      img.src = imageURL;
+      document.querySelector("body").appendChild(img);
+    },
+    function(err) {
+      console.log(err);
+    }
+  );
+};
 
-// ---------------------- FETCH 
+// ---------------------- FETCH
 // fetch(url)
 //   .then(function(data) {
 //     // Here you get the data to modify as you please
@@ -44,7 +49,7 @@ function addProduct(nProduct){
 //   })
 //   .catch(function(error) {
 //     // If there is any error you will catch them here
-//   });  
+//   });
 
 //--------------------- AXIOS
 
@@ -54,15 +59,15 @@ function addProduct(nProduct){
 
 /// ---------------- ASYNC/AWAIT
 
-async function onPageLoad(){
-    await addProduct(newProduct);
-    getProducts ();
+async function onPageLoad() {
+  await addProduct(newProduct);
+  getProducts();
 }
 
 /// ---------------- ASYNC/AWAIT with FETCH
 
-async function getData(){
-    var fetchResult = await fetch(url);
-    var resJson = await fetchResult.json();
-    console.log(' getData :: resJson - : ', resJson);
+async function getData() {
+  var fetchResult = await fetch(url);
+  var resJson = await fetchResult.json();
+  console.log(" getData :: resJson - : ", resJson);
 }

@@ -17,7 +17,6 @@ function Developer(lang, fName, lName){
     Person.call(this, fName, lName);// This is not inheriting anything, 
     //but executing what ever available in Person class
     this.language = lang;
-    this
 }
 Developer.prototype = Object.create(Person.prototype);// This will inherit everything from Person
 Developer.prototype.protoDeveloperName  = function () {

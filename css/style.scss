@@ -1,162 +1,329 @@
-    $boxShadow : 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
-    $borderRadius : 5px;
-    
-    #mainContainer{
-        display: grid;
-    }
-    #eventTopicContainer{
-        display: grid;
-        grid-template-columns: 80%;
-        justify-content: center;
-        align-content: center;
-    }
+$boxShadow: 2px 2px 15px 1px rgba(80, 80, 80, 0.6);
+$borderRadius: 5px;
 
-    #outerDiv{
-        height: 300px;
-		display: grid;
-        border: 1px solid rgb(213, 49, 46);
-        border-radius: $borderRadius;
-        background-color: #da6d4c;
-        box-shadow: $boxShadow;
-        grid-template-columns: 60%;
-        grid-template-rows: 200px;
-        justify-content: center;
-        align-content: center;
-	}
-	#innerDiv{
-		display: grid;
-        border: 1px solid rgb(22, 97, 18);
-        border-radius: $borderRadius;
-        background-color: #25a93f;
-        box-shadow: $boxShadow;
-        grid-template-columns: 50%;
-        grid-template-rows: 150px;
-        justify-content: center;
-        align-content: center;
-	}
-    
-    #actionDiv{
-        display: grid;
-        border: 1px solid rgb(12, 67, 101);
-        border-radius: $borderRadius;
-        background-color: #186a88;
-        box-shadow: $boxShadow;
-        justify-items: center;
-        align-items: center;
-        button{
-            width: 15em;
-            height: 25px;
-            margin-top: 1em;
-            border: 1px solid #333;
-            border-radius: $borderRadius;
-            box-shadow: $boxShadow;
-            cursor: pointer;
-        }
-    }
-    #resultDiv{
-        display: grid;
-        border-radius: $borderRadius;
-        box-shadow: $boxShadow;
-        grid-template-rows: 50px 1fr;
-    }
-    .resetRow{
-        display: grid;
-        border-radius: $borderRadius;
-        box-shadow: $boxShadow;
-        grid-gap: 10px;
-        justify-items: center;
-        align-items: center;
-        
-        button{
-            width: 200px;
-            height: 30px;
-            border-radius: $borderRadius;
-            box-shadow: $boxShadow;
-            cursor: pointer;
-        }
-    }
-    .resultRow{
-        display: grid;
-        border-radius: $borderRadius;
-        box-shadow: $boxShadow;
-        grid-template-columns: 1fr 1fr;
-        justify-content: center;
-        align-content: center;
-    }
+* {
+  padding: 0;
+  margin: 0;
+}
 
-    .checkBoxWrapper{
-        color: #fff;
-        padding: 5px;
-    }
-    .capturingHeader, .bubblingHeader{
-        background-color: rgb(12, 84, 106);
-        border-radius: $borderRadius;
-        color: #fff;
-        align-items: center;
-        margin-bottom: 5px;
-    }
-    .capturingHeader, .bubblingHeader, .capturingSection, .bubblingSection{
-        display: grid;
-        justify-content: center;
-        grid-auto-rows: 30px;
-        grid-gap: 5px;
-    }
+#mainContainer {
+  display: grid;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
 
-.phaseItem{
-    animation: animateElement linear .3s;
-    animation-iteration-count: 1;
-    width:100%;
-    min-height:30px;
-    border-radius:10px;
-   }
-  
-  @keyframes animateElement{
-    0% {
-      opacity:0;
-      transform:  translate(0px,10px);
-    }
-    100% {
-      opacity:1;
-      transform:  translate(0px,0px);
+#imageSlider {
+  position: relative;
+}
+#imageSlider img {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  background-color: white;
+}
+#imageSlider img.active {
+  z-index: 3;
+}
+
+#imageSlider {
+  width: 100vw;
+  height: 90vh;
+  border: 1px solid red;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: none;
+    // animation: fadeIn 5s infinite alternate;
+  }
+  img.isVisible {
+    display: inline;
+  }
+}
+
+.fadeImg {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+  }
+}
+
+// BUTTON
+.buttonContainer {
+  border: 1px solid red;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+}
+
+.mainButton {
+  display: block;
+  width: 50px;
+  height: 50px;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: #d25858;
+  border: 1px solid #e04f4f;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px 5px rgba(80, 80, 80, 0.6);
+  margin: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.subButtons {
+  list-style-type: none;
+  display: inline;
+  &:hover {
+    li {
+      transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+      -webkit-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
+      -moz-transition: opacity 0.5s 0.5s, transform 0.5s 0.5s;
     }
   }
+}
 
-	
-.textWithImageBG{
-    font                    : bolder 12vw 'Times';
-    width                   : 75vw;
-    margin                  : auto;
-    text-align              : center;
-    background              : url("../images/code.jpg") center;
-    background-size         : contain;
-    background-clip         : text;
-    -webkit-background-clip : text;
-    color                   : transparent;
-    text-shadow             : 5px 10px 25px #0e0e0e;
+.subButton {
+  display: block;
+  width: 40px;
+  height: 40px;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: #d25858;
+  border: 1px solid #e04f4f;
+  border-radius: 50%;
+  box-shadow: 2px 2px 10px 5px rgba(80, 80, 80, 0.6);
+  margin: 10px;
+}
+
+//
+
+#eventTopicContainer {
+  display: grid;
+  grid-template-columns: 80%;
+  justify-content: center;
+  align-content: center;
+}
+
+#outerDiv {
+  height: 300px;
+  display: grid;
+  border: 1px solid rgb(213, 49, 46);
+  border-radius: $borderRadius;
+  background-color: #da6d4c;
+  box-shadow: $boxShadow;
+  grid-template-columns: 60%;
+  grid-template-rows: 200px;
+  justify-content: center;
+  align-content: center;
+}
+#innerDiv {
+  display: grid;
+  border: 1px solid rgb(22, 97, 18);
+  border-radius: $borderRadius;
+  background-color: #25a93f;
+  box-shadow: $boxShadow;
+  grid-template-columns: 50%;
+  grid-template-rows: 150px;
+  justify-content: center;
+  align-content: center;
+}
+
+#actionDiv {
+  display: grid;
+  border: 1px solid rgb(12, 67, 101);
+  border-radius: $borderRadius;
+  background-color: #186a88;
+  box-shadow: $boxShadow;
+  justify-items: center;
+  align-items: center;
+  button {
+    width: 15em;
+    height: 25px;
+    margin-top: 1em;
+    border: 1px solid #333;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    cursor: pointer;
+  }
+}
+#resultDiv {
+  display: grid;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  grid-template-rows: 50px 1fr;
+}
+.resetRow {
+  display: grid;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+
+  button {
+    width: 200px;
+    height: 30px;
+    border-radius: $borderRadius;
+    box-shadow: $boxShadow;
+    cursor: pointer;
+  }
+}
+.resultRow {
+  display: grid;
+  border-radius: $borderRadius;
+  box-shadow: $boxShadow;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-content: center;
+}
+
+.checkBoxWrapper {
+  color: #fff;
+  padding: 5px;
+}
+.capturingHeader,
+.bubblingHeader {
+  background-color: rgb(12, 84, 106);
+  border-radius: $borderRadius;
+  color: #fff;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.capturingHeader,
+.bubblingHeader,
+.capturingSection,
+.bubblingSection {
+  display: grid;
+  justify-content: center;
+  grid-auto-rows: 30px;
+  grid-gap: 5px;
+}
+
+.phaseItem {
+  animation: animateElement linear 0.3s;
+  animation-iteration-count: 1;
+  width: 100%;
+  min-height: 30px;
+  border-radius: 10px;
+}
+
+@keyframes animateElement {
+  0% {
+    opacity: 0;
+    transform: translate(0px, 10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+.textWithImageBG {
+  font: bolder 12vw "Times";
+  width: 75vw;
+  margin: auto;
+  text-align: center;
+  background: url("../images/code.jpg") center;
+  background-size: contain;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 5px 10px 25px #0e0e0e;
 }
 .maskedTitle {
-    text-align                          : center;
-    font-size                           : 15vw;
-    background-image                    : url(../images/gallery/col3Gallery/c3Pic5.jpeg);
-    -webkit-text-fill-color             : transparent;
-    -webkit-background-clip             : text;
-    background-clip                     : text;
-    -webkit-animation-name              : animateTextMask;
-    animation-name                      : animateTextMask;
-    -webkit-animation-duration          : 80s;
-    animation-duration                  : 80s;
-    -webkit-animation-timing-function   : linear;
-    animation-timing-function           : linear;
-    -webkit-animation-iteration-count   : infinite;
-    animation-iteration-count           : infinite;
-    opacity                             : .2;
+  text-align: center;
+  font-size: 15vw;
+  background-image: url(../images/gallery/col3Gallery/c3Pic5.jpeg);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-animation-name: animateTextMask;
+  animation-name: animateTextMask;
+  -webkit-animation-duration: 80s;
+  animation-duration: 80s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  opacity: 0.2;
 }
 @keyframes animateTextMask {
-    0% {
-        background-position: left bottom;
-    }
-    100% {
-        background-position: right bottom;
-    }
+  0% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}
+//------------------------ TOGGLE DISPLAY------------------------
+#toggleDisplay .overlay {
+  visibility: visible;
+  border: 2px solid red;
+  opacity: 1;
+  /* When showing the content we only need to transition the
+       opacity, and everything else should be applied instantly */
+  -webkit-transition: opacity 2s linear;
+  -moz-transition: opacity 2s linear;
+  -o-transition: opacity 2s linear;
+  transition: opacity 2s linear;
+}
+#toggleDisplay .hidden {
+  visibility: hidden;
+  opacity: 0;
+  /* When hiding the content we should delay the transition
+       of the visibility value, so that it happens at the end
+       of the opacity transition. Note that even though it works
+       with visibility, the same trick doesn’t work with display,
+       position, or height (barring a fixed height). */
+  -webkit-transition: visibility 0s 2s, opacity 2s linear;
+  -moz-transition: visibility 0s 2s, opacity 2s linear;
+  -o-transition: visibility 0s 2s, opacity 2s linear;
+  transition: visibility 0s 2s, opacity 2s linear;
+}
+/* Any formatting that results in the content taking up vertical
+     space should be applied to the element’s content, not to
+     the shown/hidden element itself, that that the element can
+     collapse to a 0px height. */
+#toggleDisplay .overlay .overlayContent {
+  // margin-top: 0px;
+  // padding: 15px;
+  display: grid;
+  width: 90vw;
+  height: 300px;
+  border-radius: 5px;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid aquamarine;
+  box-shadow: 2px 2px 10px 10px rgba(80, 80, 80, 0.6);
+}
+/* We’re hiding the content with a negative top margin, after
+     a 2s delay. We’re not using display:none or position:absolute
+     because we can’t delay those. */
+//   #toggleDisplay .hidden .overlayContent {
+//     margin-top: -10000px;
+//     -webkit-transition: margin-top 0s 2s;
+//     -moz-transition: margin-top 0s 2s;
+//     -o-transition: margin-top 0s 2s;
+//     transition: margin-top 0s 2s;
+//   }
+
+.nItem {
+  display: block;
+  width: 50px;
+  height: 25px;
+  margin: 5px;
+  border: 1px solid #333;
 }

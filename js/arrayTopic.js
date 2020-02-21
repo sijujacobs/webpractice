@@ -76,4 +76,26 @@
     console.log("slicedArray : ", slicedArray);
     console.log("2. array : ", array);
     
-    
+    // LENGTH OF BINARY
+
+function lengthOfBinary(myNumber){
+    console.clear();
+    console.log(myNumber, " : Binary :---------- ", myNumber.toString(2));
+    var numArray = myNumber.toString(2).split('');
+    var zeroCount = 0;
+    var maxCount = 0;
+    var isOneStarted = false;
+    for(var i=0; i < numArray.length; i++){
+        var thisBinary = numArray[i];
+        if(thisBinary === '0'){
+            zeroCount++;
+        }else{
+            maxCount = (zeroCount > maxCount) ? zeroCount : maxCount;
+            zeroCount = 0;
+            isOneStarted = true;
+        }
+    }
+    console.log("maxCount : ", maxCount);
+}
+
+//------------------------
