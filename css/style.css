@@ -9,6 +9,51 @@
   display: grid;
 }
 
+#mainContainer .mainHeader {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 150px;
+      grid-template-rows: 150px;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  background-color: #0c4365;
+  -webkit-box-shadow: 2px 2px 10px 10px rgba(80, 80, 80, 0.6);
+          box-shadow: 2px 2px 10px 10px rgba(80, 80, 80, 0.6);
+}
+
+#mainContainer .topicList {
+  border: 1px solid #333;
+  padding: 20px;
+}
+
+#mainContainer .topicList ul li {
+  padding: 5px;
+  cursor: pointer;
+  width: 200px;
+}
+
+#mainContainer .topicList ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: #0e0e0e;
+  width: 150px;
+  display: block;
+  border: 1px solid #333;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#mainContainer .topicList ul li a:hover {
+  color: #fff;
+  background-color: #186a88;
+  -webkit-box-shadow: 1px 1px 10px 3px rgba(80, 80, 80, 0.6);
+          box-shadow: 1px 1px 10px 3px rgba(80, 80, 80, 0.6);
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
