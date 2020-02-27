@@ -1,4 +1,5 @@
 (function() {
+  // date pattern NOT completed
   const patterns = {
     userName: /^[a-z\d]{5,10}$/,
     email: /^([a-z\d\._-]+)@([a-z\d]+)\.([a-z]{2,5})(\.[a-z]{2,3})?$/,
