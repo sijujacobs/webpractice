@@ -451,4 +451,39 @@
   margin: 5px;
   border: 1px solid #333;
 }
+
+.regexForm {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.regexForm .formField {
+  width: 300px;
+  height: 20px;
+  padding: 4px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  outline: none;
+}
+
+.regexForm .formField.valid {
+  border: 1px solid #1cd754;
+}
+
+.regexForm .formField.invalid {
+  border: 1px solid #d71c1c;
+}
+
+.regexForm .formLabel {
+  font-size: 0.7em;
+  line-height: 0.5em;
+  padding: 5px 0 5px 2px;
+}
 /*# sourceMappingURL=style.css.map */

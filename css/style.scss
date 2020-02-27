@@ -362,3 +362,31 @@ $borderRadius: 5px;
   margin: 5px;
   border: 1px solid #333;
 }
+
+//----------- Regex
+.regexForm {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  .formField {
+    width: 300px;
+    height: 20px;
+    padding: 4px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    margin: 10px 0 0 0;
+    outline: none;
+    &.valid {
+      border: 1px solid rgb(28, 215, 84);
+    }
+    &.invalid {
+      border: 1px solid rgb(215, 28, 28);
+    }
+  }
+  .formLabel {
+    font-size: 0.7em;
+    line-height: 0.5em;
+    padding: 5px 0 5px 2px;
+  }
+}
