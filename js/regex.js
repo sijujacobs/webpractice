@@ -2,10 +2,10 @@
   const patterns = {
     userName: /^[a-z\d]{5,10}$/,
     email: /^([a-z\d\._-]+)@([a-z\d]+)\.([a-z]{2,5})(\.[a-z]{2,3})?$/,
-    phone: /^\d{10}$/
+    phone: /^\d{10}$/,
+    date: /^(\d){2,2}/
   };
 
-  var emailVal = "/^([a-zd.-_]+)@([a-zd]+).().()?$/";
   const formFields = document.querySelectorAll("input");
   formFields.forEach(input => {
     input.addEventListener("keyup", event => {
