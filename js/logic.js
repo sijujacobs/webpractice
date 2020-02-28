@@ -69,3 +69,12 @@ console.log(Math.max.apply(null, num)); // logs 5  -- Use of APPLY
 function randomInteger(minNum, maxNum) {
   return minNum + Math.floor(Math.random() * maxNum);
 }
+
+//Capitalize LastLetter of words in string
+const capLast = str => str.replace(/\w\b/g, match => match.toUpperCase());
+function capLast2(txt) {
+  return txt.replace(
+    /\w{1,}/g,
+    word => word.slice(0, -1) + word.charAt(word.length - 1).toUpperCase()
+  );
+}
