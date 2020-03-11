@@ -11,7 +11,8 @@ function isPalindrome(str) {
 
 //-------------------------
 var fibonacci_series = function(n) {
-  if (n === 1) {
+  //n should be greater than 1
+  if (n < 1) {
     return [0, 1];
   } else {
     var s = fibonacci_series(n - 1);
@@ -78,3 +79,16 @@ function capLast2(txt) {
     word => word.slice(0, -1) + word.charAt(word.length - 1).toUpperCase()
   );
 }
+
+//--------
+// regex to find word starts with caps  -->   \b[A-Z].*?\b
+
+// REG EXPLANATION:
+
+// \b is a word boundary. It matches the beginning and ending of a word
+// . matches any character,
+// * matches the previous character 0 or more times,
+// ? makes the previous * non-greedy, so it matches as few characters as it can instead of the the whole string
+
+//---- \b\w{5}\b.*?  --> find all words starts with 5 letters
+//---- \b[A-Z]{1}\w{4}\b ---> find all 5 letter words Starts with CAPS
