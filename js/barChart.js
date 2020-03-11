@@ -1,5 +1,5 @@
 console.log(" BarChart :: : ");
-
+//https://www.tutorialsteacher.com/d3js/create-bar-chart-using-d3js
 var svg = d3.select("svg"),
   margin = 200,
   width = svg.attr("width") - margin,
