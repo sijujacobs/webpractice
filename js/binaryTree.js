@@ -5,8 +5,8 @@ function Node(val) {
 }
 
 Node.prototype.traverse = function (nod, level = 1) {
-  console.log("traverse :: nod : ", nod);
-  updateNodeValues(nod, level);
+  //   console.log("traverse :: nod : ", nod);
+  updateNodeMap(nod, level);
   let leftNode = nod.left || null;
   let rightNode = nod.right || null;
   if (leftNode || rightNode) {
@@ -38,7 +38,7 @@ Node.prototype.insert = function (val) {
 };
 
 var nodeMap = {};
-function updateNodeValues(node, level) {
+function updateNodeMap(node, level) {
   let nodeDet = {
     level: level,
     values: [node.value],
@@ -48,6 +48,19 @@ function updateNodeValues(node, level) {
   } else {
     nodeMap[level] = nodeDet;
   }
+}
+function showAverage() {
+  let averages = [];
+  if (nodeMap) {
+    for (n in nodeMap) {
+      let thisLevel = nodeMap[n];
+      let total = thisLevel.values.reduce((acc, val) => acc + val);
+      let ave = (total / thisLevel.values.length).toFixed(2);
+      //   console.log("ave : ", ave);
+      averages.push(ave);
+    }
+  }
+  return averages;
 }
 
 console.clear();
@@ -61,5 +74,7 @@ n.insert(12);
 n.insert(56);
 
 n.traverse(n);
+
 console.log(n);
 console.log("nodeMap : ", nodeMap);
+console.log("showAverage : ", showAverage());
