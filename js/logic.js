@@ -80,6 +80,54 @@ function capLast2(txt) {
   );
 }
 
+// Recurssive Object checking function
+function getObjectDetails(thisObj) {
+  if (typeof thisObj === "object") {
+    for (let prop in thisObj) {
+      let thisPropValue = thisObj[prop];
+      if (thisPropValue) {
+        if (prop === "age") {
+          totalAge += Number(thisPropValue);
+        }
+        if (typeof thisPropValue === "object") {
+          getObjectDetails(thisPropValue);
+        }
+        if (Array.isArray(thisPropValue)) {
+          for (let i = 0; i < thisPropValue.length; i++) {
+            let thisItem = thisPropValue[i];
+            if (typeof thisItem === " object") {
+              getObjectDetails(thisItem);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+var newObj = {
+  name: "Siju",
+  age: 40,
+  skillObj: {
+    name: "javascript",
+    age: 15,
+    skillObj2: {
+      name: "javascript",
+      age: 15
+    }
+  },
+  skills: [
+    {
+      name: "angular",
+      age: 5
+    }
+  ]
+};
+console.clear();
+console.log("1. Total Age : ", totalAge);
+getObjectDetails(newObj);
+console.log("2. Total Age : ", totalAge);
+
 //--------
 // regex to find word starts with caps  -->   \b[A-Z].*?\b
 
